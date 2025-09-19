@@ -14,17 +14,24 @@
   *{box-sizing:border-box}
   body{
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg); color:var(--ink); margin:0; padding:12px; text-align:center;
+    background:var(--bg); color:var(--ink); margin:0; padding:4px 12px 12px; /* tighter top */
+    text-align:center;
   }
-  header{margin:0 0 8px 0; position:relative;}
-  #logo{display:inline-block; max-height:160px; width:auto; margin:0 0 6px 0;}
-  #pills{margin:4px 0 0 0}
-  .pill{display:inline-block; color:#fff; font-weight:600;
-    padding:6px 12px; border-radius:999px; margin:0 6px 6px 6px; font-size:13px;}
+  header{margin:0 0 4px 0; position:relative;} /* tighter bottom */
+  #logo{
+    display:block;                 /* removes inline baseline gap */
+    max-height:160px; width:auto;
+    margin:0 auto 2px;             /* tighter under logo */
+  }
+  #pills{margin:0}
+  .pill{
+    display:inline-block; color:#fff; font-weight:600;
+    padding:6px 12px; border-radius:999px; margin:0 6px 6px 6px; font-size:13px;
+  }
   .easy{background:var(--pill-easy)} .medium{background:var(--pill-medium)} .hard{background:var(--pill-hard)}
   .multiple{background:var(--pill-multiple)} .single{background:var(--pill-single)}
-  #timer{font-weight:700; margin:6px 0 8px 0; font-size:15px}
-  #grid{display:grid; justify-content:center; gap:6px; margin:8px auto 12px auto;}
+  #timer{font-weight:700; margin:2px 0 4px 0; font-size:15px} /* tighter */
+  #grid{display:grid; justify-content:center; gap:6px; margin:6px auto 12px auto;} /* tighter top margin */
   .cell{width:64px; height:64px; background:#fff; border:2px solid #999;
     display:flex; align-items:center; justify-content:center; cursor:pointer;}
   .static{cursor:default}
@@ -79,6 +86,7 @@
 
 <div id="popup"></div>
 
+<!-- UPDATED HELP POPUP WITH CONTROLS -->
 <div id="help-popup">
   <h2>How to Play</h2>
   <p>Fill all spaces in the grid with shapes.</p>
@@ -136,36 +144,31 @@ helpBtn.addEventListener('click', ()=>{ helpPopup.style.display='block'; });
 function closeHelp(){ helpPopup.style.display='none'; }
 
 /* ==========================================================
-   WEEKDAY FALLBACK (0=Sun..6=Sat) — UPDATED, NO CONTRADICTIONS
+   WEEKDAY FALLBACK (0=Sun..6=Sat)
    ========================================================== */
 const fallbackWeek = {
-  // Sunday — Easy (3 rules)
   0: {difficulty:"Easy",gridSize:4,solutionType:"Multiple",bonusRound:true,
       rules:[
         {type:"atLeast",shape:"circle",n:3,text:"At least 3 circles total"},
         {type:"cornersAtLeast",shape:"diamond",n:2,text:"At least 2 diamonds in the corners"},
         {type:"exactly",shape:"star",n:2,text:"Exactly 2 stars total"}]},
-  // Monday — Easy (3 rules)
   1: {difficulty:"Easy",gridSize:4,solutionType:"Multiple",bonusRound:true,
       rules:[
         {type:"eachRowExactly",shape:"square",n:1,text:"Each row has exactly 1 square"},
         {type:"cornersAtLeast",shape:"circle",n:1,text:"At least 1 circle in the corners"},
         {type:"evenCount",shape:"triangle",text:"Triangles appear an even number of times"}]},
-  // Tuesday — Medium (4 rules)
   2: {difficulty:"Medium",gridSize:5,solutionType:"Multiple",bonusRound:true,
       rules:[
         {type:"centerIs",shape:"star",text:"The middle cell must be a star"},
         {type:"rowExact",row:"middle",shape:"square",n:2,text:"Middle row has exactly 2 squares"},
         {type:"no2x2Same",text:"No 2×2 block may be all the same shape"},
         {type:"atLeast",shape:"triangle",n:4,text:"At least 4 triangles total"}]},
-  // Wednesday — Medium (4 rules)
   3: {difficulty:"Medium",gridSize:5,solutionType:"Multiple",bonusRound:true,
       rules:[
-        {type:"cornersPairsDifferent",text:"Top pair differs from bottom pair"},
         {type:"symmetryLR",text:"Board is left–right symmetric"},
+        {type:"cornersPairsDifferent",text:"Top pair differs from bottom pair"},
         {type:"atLeast",shape:"circle",n:5,text:"At least 5 circles total"},
         {type:"noAdjSame",text:"No two identical shapes can be directly next to each other"}]},
-  // Thursday — Hard (5 rules) — fixed: triangle-per-column removed; ratioEqual corrected
   4: {difficulty:"Hard",gridSize:5,solutionType:"Multiple",bonusRound:true,
       rules:[
         {type:"ratioEqual",shapeA:"circle",kA:1,shapeB:"diamond",kB:2,text:"Circles must be twice as many as diamonds"},
@@ -173,7 +176,6 @@ const fallbackWeek = {
         {type:"fullDiagonalOnly",shape:"diamond",which:"either",text:"One diagonal from corner to corner must be all diamonds"},
         {type:"atLeast",shape:"triangle",n:5,text:"At least 5 triangles total"},
         {type:"noAdjTriangles",mode:"any",text:"No two triangles can touch in any direction"}]},
-  // Friday — Hard (5 rules)
   5: {difficulty:"Hard",gridSize:5,solutionType:"Multiple",bonusRound:true,
       rules:[
         {type:"topRowAllDiff",text:"Top row must all be different shapes"},
@@ -181,13 +183,12 @@ const fallbackWeek = {
         {type:"forbidAdjacencyPair",shapeA:"star",shapeB:"diamond",mode:"line",text:"Stars cannot touch diamonds (up, down, left, or right)"},
         {type:"atLeast",shape:"star",n:3,text:"At least 3 stars total"},
         {type:"atLeast",shape:"diamond",n:3,text:"At least 3 diamonds total"}]},
-  // Saturday — Break
   6: {difficulty:"Break",gridSize:5,solutionType:"None",bonusRound:false,
       rules:[{type:"break",text:"LETSTAKEAMENTALBREAKTODAY"}]}
 };
 
 /* ==========================================================
-   LOAD puzzles.json (if available) OR FALLBACK BY WEEKDAY
+   LOAD puzzles.json (robust logs + cache-busting + tolerant match)
    ========================================================== */
 let PUZZLES = [];
 let puzzle = null;
@@ -201,17 +202,33 @@ function todayLocalISO(){
 }
 
 async function loadPuzzles() {
+  const todayStr = todayLocalISO();
   try {
-    const response = await fetch("puzzles.json");
-    if (!response.ok) throw new Error("File not found");
+    // Cache-busting query + no-store: helps with GitHub Pages caching
+    const response = await fetch(`puzzles.json?ts=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Fetch failed with status ${response.status}`);
+
     PUZZLES = await response.json();
-    const todayStr = todayLocalISO();
-    puzzle = PUZZLES.find(p => p.date === todayStr);
-    if (!puzzle) throw new Error("No entry for today's date in puzzles.json");
+    if (!Array.isArray(PUZZLES)) throw new Error("puzzles.json must be a JSON array");
+
+    console.log("✅ puzzles.json loaded");
+    console.log("Looking for:", todayStr);
+    console.log("Available dates:", PUZZLES.map(p => `"${(p.date||'').trim()}"`));
+
+    puzzle = PUZZLES.find(p => (p.date||'').trim().slice(0,10) === todayStr);
+
+    // If today's date isn't present, use the last available puzzle in the file
+    if (!puzzle) {
+      console.warn("⚠️ No exact match for today. Using the last puzzle in the file.");
+      puzzle = PUZZLES[PUZZLES.length - 1];
+    }
   } catch (err) {
+    console.error("❌ Error loading puzzles.json:", err.message);
     const dow = new Date().getDay(); // 0..6
+    console.warn("Using weekday fallback puzzle index:", dow);
     puzzle = JSON.parse(JSON.stringify(fallbackWeek[dow]));
   }
+
   renderPills();
   initGrid();
   renderRules();
@@ -414,7 +431,7 @@ function validateRule(rule){
       const mode = rule.mode || 'line';
       const dirs = (mode==='any')
         ? [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]]
-        : [[1,0],[0,1],[-1,0],[0,-1]];
+        : [[1,0],[0,1],[ -1,0],[0,-1]];
       for(let r=0;r<gridSize;r++){
         for(let c=0;c<gridSize;c++){
           if(state[r][c]===tri){
@@ -584,16 +601,17 @@ function startTimer(){
 function stopTimer(){ if(tInt){ clearInterval(tInt); tInt=null; } }
 
 /* ==========================================================
-   SHARE POPUP (no-spoiler format)
+   SHARE POPUP (auto-uses current site URL)
    ========================================================== */
 function showWinPopup(){
   const timeStr=timerEl.textContent.replace('⏱ ','');
-  const totalRules = 1 + puzzle.rules.length; // Fill + puzzle rules
+  const totalRules = 1 + puzzle.rules.length;
   const cleared = totalRules;
+  const shareURL = window.location.origin + window.location.pathname;
   const shareText=`Gridlock ${todayLocalISO()}
 ⏱ ${timeStr} — Difficulty: ${puzzle.difficulty}
 ✅ ${cleared}/${totalRules} Rules Cleared
-Play at: https://yourgame.com`;
+Play at: ${shareURL}`;
 
   let nativeBtn='';
   if(navigator.share){
@@ -608,7 +626,7 @@ Play at: https://yourgame.com`;
     <div class="share-btns">
       <a class="wa" target="_blank" href="https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}">WhatsApp</a>
       <a class="x"  target="_blank" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}">X</a>
-      <a class="fb" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://yourgame.com')}">Facebook</a>
+      <a class="fb" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareURL)}">Facebook</a>
       <button class="copy" onclick="copyResults(\`${shareText}\`)">Copy</button>
       ${nativeBtn}
     </div>
@@ -621,7 +639,8 @@ function copyResults(text){
   navigator.clipboard.writeText(text).then(()=>alert("Results copied to clipboard!"));
 }
 function nativeShare(text){
-  navigator.share({ title:"Gridlock Result", text, url:"https://yourgame.com" }).catch(()=>{});
+  const shareURL = window.location.origin + window.location.pathname;
+  navigator.share({ title:"Gridlock Result", text, url:shareURL }).catch(()=>{});
 }
 
 /* ==========================================================
