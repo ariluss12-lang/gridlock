@@ -205,7 +205,7 @@ async function loadPuzzles() {
   const todayStr = todayLocalISO();
   try {
     // Cache-busting query + no-store: helps with GitHub Pages caching
-    const response = await fetch(`puzzles.json?ts=${Date.now()}`, { cache: "no-store" });
+    const response = await fetch("/gridlock/puzzles.json?ts=" + Date.now(), { cache: "no-store" });
     if (!response.ok) throw new Error(`Fetch failed with status ${response.status}`);
 
     PUZZLES = await response.json();
