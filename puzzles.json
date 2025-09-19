@@ -1,0 +1,5274 @@
+[
+  {
+    "date": "2025-09-14",
+    "id": 500,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-15",
+    "id": 501,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-16",
+    "id": 502,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-17",
+    "id": 503,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-18",
+    "id": 504,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-19",
+    "id": 505,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-20",
+    "id": 506,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-21",
+    "id": 507,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-22",
+    "id": 508,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-23",
+    "id": 509,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-24",
+    "id": 510,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-25",
+    "id": 511,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-26",
+    "id": 512,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-27",
+    "id": 513,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-28",
+    "id": 514,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-29",
+    "id": 515,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-30",
+    "id": 516,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-01",
+    "id": 517,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-02",
+    "id": 518,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-03",
+    "id": 519,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-04",
+    "id": 520,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-05",
+    "id": 521,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-06",
+    "id": 522,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-07",
+    "id": 523,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-08",
+    "id": 524,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-09",
+    "id": 525,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-10",
+    "id": 526,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-11",
+    "id": 527,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-12",
+    "id": 528,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-13",
+    "id": 529,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-14",
+    "id": 530,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-15",
+    "id": 531,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-16",
+    "id": 532,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-17",
+    "id": 533,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-18",
+    "id": 534,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-19",
+    "id": 535,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-20",
+    "id": 536,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-21",
+    "id": 537,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-22",
+    "id": 538,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-23",
+    "id": 539,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-24",
+    "id": 540,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-25",
+    "id": 541,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-26",
+    "id": 542,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-27",
+    "id": 543,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-28",
+    "id": 544,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-29",
+    "id": 545,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-30",
+    "id": 546,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-31",
+    "id": 547,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-01",
+    "id": 548,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-02",
+    "id": 549,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-03",
+    "id": 550,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-04",
+    "id": 551,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-05",
+    "id": 552,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-06",
+    "id": 553,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-07",
+    "id": 554,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-08",
+    "id": 555,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-09",
+    "id": 556,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-10",
+    "id": 557,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-11",
+    "id": 558,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-12",
+    "id": 559,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-13",
+    "id": 560,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-14",
+    "id": 561,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-15",
+    "id": 562,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-16",
+    "id": 563,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-17",
+    "id": 564,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-18",
+    "id": 565,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-19",
+    "id": 566,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-20",
+    "id": 567,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-21",
+    "id": 568,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-22",
+    "id": 569,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-23",
+    "id": 570,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-24",
+    "id": 571,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-25",
+    "id": 572,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-26",
+    "id": 573,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-27",
+    "id": 574,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-28",
+    "id": 575,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-29",
+    "id": 576,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-30",
+    "id": 577,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-01",
+    "id": 578,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-02",
+    "id": 579,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-03",
+    "id": 580,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-04",
+    "id": 581,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-05",
+    "id": 582,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-06",
+    "id": 583,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-07",
+    "id": 584,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-08",
+    "id": 585,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-09",
+    "id": 586,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-10",
+    "id": 587,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-11",
+    "id": 588,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-12",
+    "id": 589,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-13",
+    "id": 590,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-14",
+    "id": 591,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-15",
+    "id": 592,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-16",
+    "id": 593,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-17",
+    "id": 594,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-18",
+    "id": 595,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-19",
+    "id": 596,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-20",
+    "id": 597,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-21",
+    "id": 598,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-22",
+    "id": 599,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-23",
+    "id": 600,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-24",
+    "id": 601,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-25",
+    "id": 602,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-26",
+    "id": 603,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-27",
+    "id": 604,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-28",
+    "id": 605,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-29",
+    "id": 606,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-30",
+    "id": 607,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-31",
+    "id": 608,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-01",
+    "id": 609,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-02",
+    "id": 610,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-03",
+    "id": 611,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-04",
+    "id": 612,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-05",
+    "id": 613,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-06",
+    "id": 614,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-07",
+    "id": 615,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-08",
+    "id": 616,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-09",
+    "id": 617,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-10",
+    "id": 618,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-11",
+    "id": 619,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-12",
+    "id": 620,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-13",
+    "id": 621,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-14",
+    "id": 622,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-15",
+    "id": 623,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-16",
+    "id": 624,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-17",
+    "id": 625,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-18",
+    "id": 626,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-19",
+    "id": 627,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-20",
+    "id": 628,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-21",
+    "id": 629,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-22",
+    "id": 630,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-23",
+    "id": 631,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-24",
+    "id": 632,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-25",
+    "id": 633,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-26",
+    "id": 634,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-27",
+    "id": 635,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-28",
+    "id": 636,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-29",
+    "id": 637,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-30",
+    "id": 638,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-31",
+    "id": 639,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-01",
+    "id": 640,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-02",
+    "id": 641,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-03",
+    "id": 642,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-04",
+    "id": 643,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-05",
+    "id": 644,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-06",
+    "id": 645,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-07",
+    "id": 646,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-08",
+    "id": 647,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-09",
+    "id": 648,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-10",
+    "id": 649,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-11",
+    "id": 650,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-12",
+    "id": 651,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-13",
+    "id": 652,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-14",
+    "id": 653,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-15",
+    "id": 654,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-16",
+    "id": 655,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-17",
+    "id": 656,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-18",
+    "id": 657,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-19",
+    "id": 658,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-20",
+    "id": 659,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-21",
+    "id": 660,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-22",
+    "id": 661,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-23",
+    "id": 662,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "id": 663,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-25",
+    "id": 664,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-26",
+    "id": 665,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-27",
+    "id": 666,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-28",
+    "id": 667,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-01",
+    "id": 668,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 3,
+        "text": "At least 3 circles total"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "diamond",
+        "n": 2,
+        "text": "At least 2 diamonds in the corners"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 2,
+        "text": "Exactly 2 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-02",
+    "id": 669,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-03",
+    "id": 670,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "centerIs",
+        "shape": "star",
+        "text": "The middle cell must be a star"
+      },
+      {
+        "type": "rowExact",
+        "row": "middle",
+        "shape": "square",
+        "n": 2,
+        "text": "Middle row has exactly 2 squares"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 4,
+        "text": "At least 4 triangles total"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-04",
+    "id": 671,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-05",
+    "id": 672,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "ratioEqual",
+        "shapeA": "circle",
+        "kA": 2,
+        "shapeB": "diamond",
+        "kB": 1,
+        "text": "Circles must be twice as many as diamonds"
+      },
+      {
+        "type": "zoneMore",
+        "zoneA": "top",
+        "zoneB": "bottom",
+        "shape": "star",
+        "text": "Top half has more stars than bottom half"
+      },
+      {
+        "type": "fullDiagonalOnly",
+        "shape": "diamond",
+        "which": "either",
+        "text": "One diagonal from corner to corner must be all diamonds"
+      },
+      {
+        "type": "atLeast",
+        "shape": "triangle",
+        "n": 5,
+        "text": "At least 5 triangles total"
+      },
+      {
+        "type": "noAdjTriangles",
+        "mode": "any",
+        "text": "No two triangles can touch in any direction"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-06",
+    "id": 673,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-07",
+    "id": 674,
+    "difficulty": "Break",
+    "gridSize": 5,
+    "solutionType": "None",
+    "bonusRound": false,
+    "rules": [
+      {
+        "type": "break",
+        "text": "LETSTAKEAMENTALBREAKTODAY"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-08",
+    "id": 675,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "cornersAtLeast",
+        "shape": "circle",
+        "n": 1,
+        "text": "At least 1 circle in the corners"
+      },
+      {
+        "type": "evenCount",
+        "shape": "triangle",
+        "text": "Triangles appear an even number of times"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-09",
+    "id": 676,
+    "difficulty": "Easy",
+    "gridSize": 4,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "no2x2Same",
+        "text": "No 2\u00d72 block may be all the same shape"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-10",
+    "id": 677,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "atLeast",
+        "shape": "circle",
+        "n": 5,
+        "text": "At least 5 circles total"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-11",
+    "id": 678,
+    "difficulty": "Medium",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "noCircleOverSquare",
+        "text": "No circle directly above/below a square"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-12",
+    "id": 679,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "topRowAllDiff",
+        "text": "Top row must all be different shapes"
+      },
+      {
+        "type": "eachRowExactly",
+        "shape": "square",
+        "n": 1,
+        "text": "Each row has exactly 1 square"
+      },
+      {
+        "type": "forbidAdjacencyPair",
+        "shapeA": "star",
+        "shapeB": "diamond",
+        "mode": "line",
+        "text": "Stars cannot touch diamonds (up, down, left, or right)"
+      },
+      {
+        "type": "atLeast",
+        "shape": "star",
+        "n": 3,
+        "text": "At least 3 stars total"
+      },
+      {
+        "type": "atLeast",
+        "shape": "diamond",
+        "n": 3,
+        "text": "At least 3 diamonds total"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-13",
+    "id": 680,
+    "difficulty": "Hard",
+    "gridSize": 5,
+    "solutionType": "Multiple",
+    "bonusRound": true,
+    "rules": [
+      {
+        "type": "symmetryLR",
+        "text": "Board is left\u2013right symmetric"
+      },
+      {
+        "type": "cornersPairsDifferent",
+        "text": "Top pair differs from bottom pair"
+      },
+      {
+        "type": "eachColAtLeast",
+        "shape": "triangle",
+        "n": 1,
+        "text": "Each column has \u22651 triangle"
+      },
+      {
+        "type": "noAdjSame",
+        "text": "No two identical shapes can be directly next to each other"
+      },
+      {
+        "type": "exactly",
+        "shape": "star",
+        "n": 4,
+        "text": "Exactly 4 stars total"
+      }
+    ]
+  }
+]

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Gridlock — Weekly Puzzle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root{
+    --red:#e74c3c; --blue:#2980b9; --green:#27ae60; --purple:#8e44ad; --gold:#f1c40f;
+    --bg:#f9fafb; --ink:#222;
+    --pill-easy:#27ae60; --pill-medium:#e67e22; --pill-hard:#c0392b;
+    --pill-multiple:#8e44ad; --pill-single:#2980b9;
+  }
+  *{box-sizing:border-box}
+  body{
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--ink); margin:0; padding:12px; text-align:center;
+  }
+  header{margin:0 0 8px 0; position:relative;}
+  #logo{display:inline-block; max-height:160px; width:auto; margin:0 0 6px 0;}
+  #pills{margin:4px 0 0 0}
+  .pill{display:inline-block; color:#fff; font-weight:600;
+    padding:6px 12px; border-radius:999px; margin:0 6px 6px 6px; font-size:13px;}
+  .easy{background:var(--pill-easy)} .medium{background:var(--pill-medium)} .hard{background:var(--pill-hard)}
+  .multiple{background:var(--pill-multiple)} .single{background:var(--pill-single)}
+  #timer{font-weight:700; margin:6px 0 8px 0; font-size:15px}
+  #grid{display:grid; justify-content:center; gap:6px; margin:8px auto 12px auto;}
+  .cell{width:64px; height:64px; background:#fff; border:2px solid #999;
+    display:flex; align-items:center; justify-content:center; cursor:pointer;}
+  .static{cursor:default}
+  #rules{max-width:760px; margin:0 auto; text-align:center; display:flex; flex-direction:column; align-items:center;}
+  #rules h3{margin:8px 0 6px 0}
+  .rule{margin:3px 0; font-size:15px}
+  .pass{color:#2e7d32} .fail{color:#c62828}
+
+  #popup, #help-popup{
+    position:fixed; left:50%; top:50%; transform:translate(-50%,-50%);
+    background:#fff; border:2px solid #333; border-radius:12px; padding:18px;
+    min-width:320px; display:none; z-index:20; text-align:center;
+  }
+  #popup h2, #help-popup h2{margin:0 0 8px 0}
+  .btn{padding:8px 12px; border-radius:8px; font-weight:600; border:0; cursor:pointer; color:#fff; margin:6px;}
+  .btn-primary{background:var(--blue)}
+
+  .share-btns { margin-top:12px; display:flex; justify-content:center; flex-wrap:wrap; gap:8px; }
+  .share-btns a, .share-btns button {
+    padding:8px 14px; border-radius:999px; font-size:14px; font-weight:600; text-decoration:none; border:0; cursor:pointer; color:#fff;
+  }
+  .share-btns .wa {background:#25D366;}    /* WhatsApp */
+  .share-btns .x  {background:#000000;}    /* X */
+  .share-btns .fb {background:#1877F2;}    /* Facebook */
+  .share-btns .copy {background:#555;}     /* Copy */
+  .share-btns .native {background:#ff9800;}/* Native Share */
+
+  #help-btn {
+    position:absolute; top:10px; right:10px;
+    width:32px; height:32px; border-radius:50%;
+    background:#2980b9; color:#fff; font-weight:700; font-size:18px;
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    box-shadow:0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  svg{width:38px; height:38px}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="gridlock-logo.png" id="logo" alt="Gridlock Logo">
+  <div id="pills"></div>
+  <div id="timer">⏱ 00:00</div>
+  <div id="help-btn">?</div>
+</header>
+
+<main>
+  <div id="grid"></div>
+  <div id="rules"></div>
+</main>
+
+<div id="popup"></div>
+
+<div id="help-popup">
+  <h2>How to Play</h2>
+  <p>Fill all spaces in the grid with shapes.</p>
+  <p>The rules below the grid guide you:</p>
+  <ul style="text-align:left; max-width:300px; margin:0 auto;">
+    <li>Rules are <span style="color:#c62828;">red ❌</span> when not satisfied</li>
+    <li>Rules are <span style="color:#2e7d32;">green ✅</span> when satisfied</li>
+  </ul>
+  <p>The timer ⏱ starts on your first move.</p>
+  <p>Solve all rules and you win!</p>
+  <button class="btn btn-primary" onclick="closeHelp()">Got it!</button>
+</div>
+
+<script>
+/* ==========================================================
+   SHAPES
+   ========================================================== */
+const SHAPES = {
+  0:{key:"empty", color:null},
+  1:{key:"circle", color:"#e74c3c"},
+  2:{key:"square", color:"#2980b9"},
+  3:{key:"triangle", color:"#27ae60"},
+  4:{key:"diamond", color:"#8e44ad"},
+  5:{key:"star", color:"#f1c40f"},
+};
+const nameToId = {circle:1, square:2, triangle:3, diamond:4, star:5};
+
+function shapeSVG(id){
+  const c = SHAPES[id]; if(id===0) return "";
+  const stroke=c.color, sw=3.5;
+  switch(id){
+    case 1: return `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="32" fill="none" stroke="${stroke}" stroke-width="${sw}"/></svg>`;
+    case 2: return `<svg viewBox="0 0 100 100"><rect x="18" y="18" width="64" height="64" fill="none" stroke="${stroke}" stroke-width="${sw}"/></svg>`;
+    case 3: return `<svg viewBox="0 0 100 100"><polygon points="50,18 82,82 18,82" fill="none" stroke="${stroke}" stroke-width="${sw}" stroke-linejoin="round"/></svg>`;
+    case 4: return `<svg viewBox="0 0 100 100"><polygon points="50,12 88,50 50,88 12,50" fill="none" stroke="${stroke}" stroke-width="${sw}" stroke-linejoin="round"/></svg>`;
+    case 5: return `<svg viewBox="0 0 100 100"><polygon fill="none" stroke="${stroke}" stroke-width="${sw}" stroke-linejoin="round" stroke-linecap="round"
+      points="50,12 61,38 89,38 66,55 74,82 50,66 26,82 34,55 11,38 39,38"/></svg>`;
+  }
+}
+
+/* ==========================================================
+   UI HANDLES
+   ========================================================== */
+const pillsEl=document.getElementById('pills');
+const timerEl=document.getElementById('timer');
+const gridEl=document.getElementById('grid');
+const rulesEl=document.getElementById('rules');
+const popupEl=document.getElementById('popup');
+const helpBtn=document.getElementById('help-btn');
+const helpPopup=document.getElementById('help-popup');
+
+helpBtn.addEventListener('click', ()=>{ helpPopup.style.display='block'; });
+function closeHelp(){ helpPopup.style.display='none'; }
+
+/* ==========================================================
+   WEEKDAY FALLBACK (0=Sun..6=Sat) — UPDATED, NO CONTRADICTIONS
+   ========================================================== */
+const fallbackWeek = {
+  // Sunday — Easy (3 rules)
+  0: {difficulty:"Easy",gridSize:4,solutionType:"Multiple",bonusRound:true,
+      rules:[
+        {type:"atLeast",shape:"circle",n:3,text:"At least 3 circles total"},
+        {type:"cornersAtLeast",shape:"diamond",n:2,text:"At least 2 diamonds in the corners"},
+        {type:"exactly",shape:"star",n:2,text:"Exactly 2 stars total"}]},
+  // Monday — Easy (3 rules)
+  1: {difficulty:"Easy",gridSize:4,solutionType:"Multiple",bonusRound:true,
+      rules:[
+        {type:"eachRowExactly",shape:"square",n:1,text:"Each row has exactly 1 square"},
+        {type:"cornersAtLeast",shape:"circle",n:1,text:"At least 1 circle in the corners"},
+        {type:"evenCount",shape:"triangle",text:"Triangles appear an even number of times"}]},
+  // Tuesday — Medium (4 rules)
+  2: {difficulty:"Medium",gridSize:5,solutionType:"Multiple",bonusRound:true,
+      rules:[
+        {type:"centerIs",shape:"star",text:"The middle cell must be a star"},
+        {type:"rowExact",row:"middle",shape:"square",n:2,text:"Middle row has exactly 2 squares"},
+        {type:"no2x2Same",text:"No 2×2 block may be all the same shape"},
+        {type:"atLeast",shape:"triangle",n:4,text:"At least 4 triangles total"}]},
+  // Wednesday — Medium (4 rules)
+  3: {difficulty:"Medium",gridSize:5,solutionType:"Multiple",bonusRound:true,
+      rules:[
+        {type:"cornersPairsDifferent",text:"Top pair differs from bottom pair"},
+        {type:"symmetryLR",text:"Board is left–right symmetric"},
+        {type:"atLeast",shape:"circle",n:5,text:"At least 5 circles total"},
+        {type:"noAdjSame",text:"No two identical shapes can be directly next to each other"}]},
+  // Thursday — Hard (5 rules) — fixed: triangle-per-column removed; ratioEqual corrected
+  4: {difficulty:"Hard",gridSize:5,solutionType:"Multiple",bonusRound:true,
+      rules:[
+        {type:"ratioEqual",shapeA:"circle",kA:1,shapeB:"diamond",kB:2,text:"Circles must be twice as many as diamonds"},
+        {type:"zoneMore",zoneA:"top",zoneB:"bottom",shape:"star",text:"Top half has more stars than bottom half"},
+        {type:"fullDiagonalOnly",shape:"diamond",which:"either",text:"One diagonal from corner to corner must be all diamonds"},
+        {type:"atLeast",shape:"triangle",n:5,text:"At least 5 triangles total"},
+        {type:"noAdjTriangles",mode:"any",text:"No two triangles can touch in any direction"}]},
+  // Friday — Hard (5 rules)
+  5: {difficulty:"Hard",gridSize:5,solutionType:"Multiple",bonusRound:true,
+      rules:[
+        {type:"topRowAllDiff",text:"Top row must all be different shapes"},
+        {type:"eachRowExactly",shape:"square",n:1,text:"Each row has exactly 1 square"},
+        {type:"forbidAdjacencyPair",shapeA:"star",shapeB:"diamond",mode:"line",text:"Stars cannot touch diamonds (up, down, left, or right)"},
+        {type:"atLeast",shape:"star",n:3,text:"At least 3 stars total"},
+        {type:"atLeast",shape:"diamond",n:3,text:"At least 3 diamonds total"}]},
+  // Saturday — Break
+  6: {difficulty:"Break",gridSize:5,solutionType:"None",bonusRound:false,
+      rules:[{type:"break",text:"LETSTAKEAMENTALBREAKTODAY"}]}
+};
+
+/* ==========================================================
+   LOAD puzzles.json (if available) OR FALLBACK BY WEEKDAY
+   ========================================================== */
+let PUZZLES = [];
+let puzzle = null;
+
+function todayLocalISO(){
+  const d=new Date();
+  const y=d.getFullYear();
+  const m=String(d.getMonth()+1).padStart(2,'0');
+  const day=String(d.getDate()).padStart(2,'0');
+  return `${y}-${m}-${day}`;
+}
+
+async function loadPuzzles() {
+  try {
+    const response = await fetch("puzzles.json");
+    if (!response.ok) throw new Error("File not found");
+    PUZZLES = await response.json();
+    const todayStr = todayLocalISO();
+    puzzle = PUZZLES.find(p => p.date === todayStr);
+    if (!puzzle) throw new Error("No entry for today's date in puzzles.json");
+  } catch (err) {
+    const dow = new Date().getDay(); // 0..6
+    puzzle = JSON.parse(JSON.stringify(fallbackWeek[dow]));
+  }
+  renderPills();
+  initGrid();
+  renderRules();
+}
+
+/* ==========================================================
+   PILLS
+   ========================================================== */
+function renderPills(){
+  pillsEl.innerHTML='';
+  if(puzzle.difficulty!=="Break"){
+    const diff=document.createElement('div');
+    diff.className=`pill ${puzzle.difficulty.toLowerCase()}`;
+    diff.textContent=`Difficulty: ${puzzle.difficulty}`;
+    pillsEl.appendChild(diff);
+
+    const sol=document.createElement('div');
+    sol.className=`pill ${puzzle.solutionType.toLowerCase()}`;
+    sol.textContent=`Solution Possibility: ${puzzle.solutionType}`;
+    pillsEl.appendChild(sol);
+  }
+}
+
+/* ==========================================================
+   GRID + STATE
+   ========================================================== */
+let gridSize=0;
+let state=[];
+
+function initGrid(){
+  gridEl.innerHTML='';
+  if(puzzle.difficulty==="Break"){
+    gridSize=5;
+    gridEl.style.gridTemplateColumns=`repeat(${gridSize}, 64px)`;
+    const msg="LETSTAKEAMENTALBREAKTODAY"; // 25 chars for 5x5
+    for(let i=0;i<25;i++){
+      const cell=document.createElement('div');
+      cell.className='cell static';
+      cell.textContent=msg[i];
+      cell.style.color=SHAPES[2].color; // blue
+      gridEl.appendChild(cell);
+    }
+    rulesEl.innerHTML=`<div style="margin-top:6px;font-weight:600;text-align:center">
+      Come back tomorrow for another mind-bending puzzle
+    </div>`;
+    timerEl.textContent='⏱ 00:00';
+    return;
+  }
+
+  gridSize=puzzle.gridSize;
+  gridEl.style.gridTemplateColumns=`repeat(${gridSize}, 64px)`;
+  state=Array.from({length:gridSize},()=>Array(gridSize).fill(0));
+  for(let r=0;r<gridSize;r++){
+    for(let c=0;c<gridSize;c++){
+      const cell=document.createElement('div');
+      cell.className='cell';
+      cell.dataset.r=r; cell.dataset.c=c;
+      cell.addEventListener('click', ()=>{
+        startTimer();
+        const rr=+cell.dataset.r, cc=+cell.dataset.c;
+        state[rr][cc]=(state[rr][cc]+1)%6; // 0..5
+        cell.innerHTML=shapeSVG(state[rr][cc]);
+        validateAll();
+      });
+      gridEl.appendChild(cell);
+    }
+  }
+}
+
+/* ==========================================================
+   RULES UI
+   ========================================================== */
+function renderRules(){
+  if(puzzle.difficulty==="Break"){ return; }
+  rulesEl.innerHTML='<h3>Rules</h3>';
+  const perm=document.createElement('div');
+  perm.id='rule-perm'; perm.className='rule fail'; perm.textContent='Fill all spaces';
+  rulesEl.appendChild(perm);
+  puzzle.rules.forEach((r,i)=>{
+    const d=document.createElement('div');
+    d.id=`rule-${i}`; d.className='rule fail'; d.textContent=r.text;
+    rulesEl.appendChild(d);
+  });
+}
+
+/* ==========================================================
+   HELPERS
+   ========================================================== */
+function filledAll(){ return state.every(row=>row.every(v=>v!==0)); }
+function countShape(shapeName){
+  const id=nameToId[shapeName]; let ct=0;
+  state.forEach(row=>row.forEach(v=>{if(v===id)ct++;}));
+  return ct;
+}
+function cornersIndices(){ return [[0,0],[0,gridSize-1],[gridSize-1,0],[gridSize-1,gridSize-1]]; }
+function rowIndex(which){ if(which==="middle") return Math.floor(gridSize/2); return null; }
+
+/* ==========================================================
+   VALIDATORS
+   ========================================================== */
+function validateRule(rule){
+  switch(rule.type){
+    /* Counts */
+    case 'atLeast': return countShape(rule.shape) >= rule.n;
+    case 'exactly': return countShape(rule.shape) === rule.n;
+    case 'evenCount': return countShape(rule.shape) % 2 === 0;
+
+    /* Corners */
+    case 'cornersAllDiff': {
+      const vals=cornersIndices().map(([r,c])=>state[r][c]);
+      if(vals.some(v=>v===0)) return false;
+      return new Set(vals).size===4;
+    }
+    case 'cornersAtLeast': {
+      const id=nameToId[rule.shape]; let ct=0;
+      cornersIndices().forEach(([r,c])=>{ if(state[r][c]===id) ct++; });
+      return ct>=rule.n;
+    }
+    case 'cornersPairsDifferent': {
+      const tl=state[0][0], tr=state[0][gridSize-1];
+      const bl=state[gridSize-1][0], br=state[gridSize-1][gridSize-1];
+      if(!tl||!tr||!bl||!br) return false;
+      return (tl===tr) && (bl===br) && (tl!==bl);
+    }
+
+    /* Fixed placements */
+    case 'centerIs': {
+      const id=nameToId[rule.shape];
+      const mid=Math.floor(gridSize/2);
+      return state[mid][mid]===id;
+    }
+    case 'topRowAllDiff': {
+      const seen=new Set();
+      for(let c=0;c<gridSize;c++){
+        if(state[0][c]===0 || seen.has(state[0][c])) return false;
+        seen.add(state[0][c]);
+      }
+      return true;
+    }
+    case 'rowExact': {
+      const id=nameToId[rule.shape];
+      const r=rowIndex(rule.row);
+      if(r==null) return false;
+      let ct=0; for(let c=0;c<gridSize;c++) if(state[r][c]===id) ct++;
+      return ct===rule.n;
+    }
+    case 'eachRowExactly': {
+      const id=nameToId[rule.shape];
+      for(let r=0;r<gridSize;r++){
+        let ct=0; for(let c=0;c<gridSize;c++) if(state[r][c]===id) ct++;
+        if(ct!==rule.n) return false;
+      }
+      return true;
+    }
+
+    /* Diagonals */
+    case 'fullDiagonalOnly': {
+      const id=nameToId[rule.shape];
+      let main=true, anti=true;
+      for(let i=0;i<gridSize;i++){
+        if(state[i][i]!==id) main=false;
+        if(state[i][gridSize-1-i]!==id) anti=false;
+      }
+      return main || anti;
+    }
+
+    /* Distribution */
+    case 'eachColAtLeast': {
+      const id=nameToId[rule.shape];
+      for(let c=0;c<gridSize;c++){
+        let ok=false;
+        for(let r=0;r<gridSize;r++){ if(state[r][c]===id){ ok=true; break; } }
+        if(!ok) return false;
+      }
+      return true;
+    }
+
+    /* Adjacency / relations */
+    case 'noAdjSame': {
+      const mode = rule.mode || 'line';
+      const dirs = (mode==='any')
+        ? [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]]
+        : [[1,0],[0,1],[-1,0],[0,-1]];
+      for(let r=0;r<gridSize;r++){
+        for(let c=0;c<gridSize;c++){
+          const v=state[r][c];
+          if(v===0) return false; // implies fully placed
+          for(const [dr,dc] of dirs){
+            const nr=r+dr, nc=c+dc;
+            if(nr>=0&&nr<gridSize&&nc>=0&&nc<gridSize){
+              if(state[nr][nc]===v) return false;
+            }
+          }
+        }
+      }
+      return true;
+    }
+    case 'noAdjTriangles': {
+      const tri=nameToId['triangle'];
+      const mode = rule.mode || 'line';
+      const dirs = (mode==='any')
+        ? [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]]
+        : [[1,0],[0,1],[-1,0],[0,-1]];
+      for(let r=0;r<gridSize;r++){
+        for(let c=0;c<gridSize;c++){
+          if(state[r][c]===tri){
+            for(const [dr,dc] of dirs){
+              const nr=r+dr, nc=c+dc;
+              if(nr>=0&&nr<gridSize&&nc>=0&&nc<gridSize){
+                if(state[nr][nc]===tri) return false;
+              }
+            }
+          }
+        }
+      }
+      return true;
+    }
+    case 'forbidAdjacencyPair': {
+      const idA=nameToId[rule.shapeA], idB=nameToId[rule.shapeB];
+      const mode = rule.mode || 'line';
+      const dirs = (mode==='any')
+        ? [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]]
+        : [[1,0],[-1,0],[0,1],[0,-1]];
+      for(let r=0;r<gridSize;r++){
+        for(let c=0;c<gridSize;c++){
+          const v=state[r][c];
+          if(v===idA || v===idB){
+            for(const [dr,dc] of dirs){
+              const nr=r+dr, nc=c+dc;
+              if(nr>=0&&nr<gridSize&&nc>=0&&nc<gridSize){
+                const nv=state[nr][nc];
+                if((v===idA && nv===idB) || (v===idB && nv===idA)) return false;
+              }
+            }
+          }
+        }
+      }
+      return true;
+    }
+    case 'noCircleOverSquare': {
+      const circle=nameToId['circle'], square=nameToId['square'];
+      for(let r=1;r<gridSize;r++){
+        for(let c=0;c<gridSize;c++){
+          if(state[r][c]===circle && state[r-1][c]===square) return false;
+          if(state[r][c]===square && state[r-1][c]===circle) return false;
+        }
+      }
+      return true;
+    }
+    case 'eachCircleTouches': {
+      const circle=nameToId['circle'];
+      const neighbor=nameToId[rule.neighborShape||'triangle'];
+      const mode = rule.mode || 'line';
+      const dirs = (mode==='any')
+        ? [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]]
+        : [[1,0],[-1,0],[0,1],[0,-1]];
+      for(let r=0;r<gridSize;r++){
+        for(let c=0;c<gridSize;c++){
+          if(state[r][c]===circle){
+            let ok=false;
+            for(const [dr,dc] of dirs){
+              const nr=r+dr, nc=c+dc;
+              if(nr>=0&&nr<gridSize&&nc>=0&&nc<gridSize){
+                if(state[nr][nc]===neighbor){ ok=true; break; }
+              }
+            }
+            if(!ok) return false;
+          }
+        }
+      }
+      return true;
+    }
+
+    /* Symmetry */
+    case 'symmetryLR': {
+      for(let r=0;r<gridSize;r++){
+        for(let c=0;c<Math.floor(gridSize/2);c++){
+          if(state[r][c]!==state[r][gridSize-1-c]) return false;
+        }
+      }
+      return true;
+    }
+
+    /* Ratios / zones */
+    case 'ratioEqual': {
+      const a=countShape(rule.shapeA);
+      const b=countShape(rule.shapeB);
+      return (rule.kA * a === rule.kB * b);
+    }
+    case 'zoneMore': {
+      const id=nameToId[rule.shape];
+      let top=0, bottom=0;
+      const cut=Math.floor(gridSize/2);
+      // top half
+      for(let r=0;r<cut;r++) for(let c=0;c<gridSize;c++) if(state[r][c]===id) top++;
+      // bottom half (skip middle row if odd)
+      const start=(gridSize%2===0)?cut:cut+1;
+      for(let r=start;r<gridSize;r++) for(let c=0;c<gridSize;c++) if(state[r][c]===id) bottom++;
+      return top>bottom;
+    }
+
+    /* Pattern rules */
+    case 'no2x2Same': {
+      for(let r=0;r<gridSize-1;r++){
+        for(let c=0;c<gridSize-1;c++){
+          const a=state[r][c], b=state[r][c+1], d=state[r+1][c], e=state[r+1][c+1];
+          if(a!==0 && a===b && a===d && a===e) return false;
+        }
+      }
+      return true;
+    }
+
+    /* Column-wide exclusion (if used) */
+    case 'noAboveBelow': {
+      const idA=nameToId[rule.shapeA], idB=nameToId[rule.shapeB];
+      for(let c=0;c<gridSize;c++){
+        let hasA=false, hasB=false;
+        for(let r=0;r<gridSize;r++){
+          if(state[r][c]===idA) hasA=true;
+          if(state[r][c]===idB) hasB=true;
+        }
+        if(hasA && hasB) return false;
+      }
+      return true;
+    }
+
+    /* Break */
+    case 'break': return true;
+
+    default: return false;
+  }
+}
+
+/* ==========================================================
+   LIVE VALIDATION + WIN
+   ========================================================== */
+function validateAll(){
+  if(puzzle.difficulty==="Break") return;
+
+  const full=filledAll();
+  const perm=document.getElementById('rule-perm');
+  if(perm) perm.className='rule ' + (full?'pass':'fail');
+
+  const statuses=puzzle.rules.map(r=>validateRule(r));
+  puzzle.rules.forEach((r,i)=>{
+    const el=document.getElementById(`rule-${i}`);
+    if(el) el.className='rule ' + (statuses[i]?'pass':'fail');
+  });
+
+  if(full && statuses.every(Boolean)){
+    stopTimer();
+    showWinPopup();
+  }
+}
+
+/* ==========================================================
+   TIMER (MM:SS)
+   ========================================================== */
+let tStart=null, tInt=null;
+function startTimer(){
+  if(tStart || puzzle.difficulty==="Break") return;
+  tStart=Date.now();
+  tInt=setInterval(()=>{
+    const elapsed=Math.floor((Date.now()-tStart)/1000);
+    const mm=String(Math.floor(elapsed/60)).padStart(2,'0');
+    const ss=String(elapsed%60).padStart(2,'0');
+    timerEl.textContent=`⏱ ${mm}:${ss}`;
+  }, 250);
+}
+function stopTimer(){ if(tInt){ clearInterval(tInt); tInt=null; } }
+
+/* ==========================================================
+   SHARE POPUP (no-spoiler format)
+   ========================================================== */
+function showWinPopup(){
+  const timeStr=timerEl.textContent.replace('⏱ ','');
+  const totalRules = 1 + puzzle.rules.length; // Fill + puzzle rules
+  const cleared = totalRules;
+  const shareText=`Gridlock ${todayLocalISO()}
+⏱ ${timeStr} — Difficulty: ${puzzle.difficulty}
+✅ ${cleared}/${totalRules} Rules Cleared
+Play at: https://yourgame.com`;
+
+  let nativeBtn='';
+  if(navigator.share){
+    nativeBtn=`<button class="native" onclick="nativeShare('${shareText.replace(/'/g,"\\'")}')">Share…</button>`;
+  }
+
+  popupEl.innerHTML=`
+    <h2>🎉 Puzzle Solved!</h2>
+    <p><strong>Time:</strong> ${timeStr}</p>
+    <p>✅ ${cleared}/${totalRules} Rules Cleared</p>
+
+    <div class="share-btns">
+      <a class="wa" target="_blank" href="https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}">WhatsApp</a>
+      <a class="x"  target="_blank" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}">X</a>
+      <a class="fb" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://yourgame.com')}">Facebook</a>
+      <button class="copy" onclick="copyResults(\`${shareText}\`)">Copy</button>
+      ${nativeBtn}
+    </div>
+
+    <button class="btn btn-primary" onclick="popupEl.style.display='none'">Close</button>
+  `;
+  popupEl.style.display='block';
+}
+function copyResults(text){
+  navigator.clipboard.writeText(text).then(()=>alert("Results copied to clipboard!"));
+}
+function nativeShare(text){
+  navigator.share({ title:"Gridlock Result", text, url:"https://yourgame.com" }).catch(()=>{});
+}
+
+/* ==========================================================
+   BOOT
+   ========================================================== */
+loadPuzzles();
+</script>
+
+</body>
+</html>
